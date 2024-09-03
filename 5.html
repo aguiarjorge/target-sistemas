@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificar Interruptores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .lampada {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+        }
+        .acesa {
+            background-color: yellow;
+        }
+        .apagada {
+            background-color: grey;
+        }
+        .quente {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Identificar Qual Interruptor Controla Qual Lâmpada</h1>
+
+    <button onclick="testarInterruptores()">Testar Interruptores</button>
+    <div>
+        <h2>Lâmpadas</h2>
+        <div id="lampada1" class="lampada apagada"></div>
+        <div id="lampada2" class="lampada apagada"></div>
+        <div id="lampada3" class="lampada apagada"></div>
+    </div>
+
+    <script>
+        function testarInterruptores() {
+            // Simulação do teste
+            const lampada1 = document.getElementById('lampada1');
+            const lampada2 = document.getElementById('lampada2');
+            const lampada3 = document.getElementById('lampada3');
+
+            // Resetar estado das lâmpadas
+            lampada1.className = 'lampada apagada';
+            lampada2.className = 'lampada apagada';
+            lampada3.className = 'lampada apagada';
+
+            // Passo 1: Ligar o primeiro interruptor por 5 minutos
+            setTimeout(() => {
+                // Desligar o primeiro interruptor e ligar o segundo
+                // Passo 2: Simulação dos estados das lâmpadas
+
+                // Vamos supor que a lâmpada1 é a que estava ligada por 5 minutos e depois desligada
+                lampada1.className = 'lampada apagada quente';
+
+                // A lâmpada2 será a que está acesa (porque o segundo interruptor está ligado)
+                lampada2.className = 'lampada acesa';
+
+                // A lâmpada3 é a que está apagada e fria (terceiro interruptor nunca foi ligado)
+                lampada3.className = 'lampada apagada';
+
+                // Mensagem de conclusão
+                alert('Teste concluído! Verifique as lâmpadas para identificar o controle de cada interruptor.');
+            }, 5000); // Simula 5 minutos com 5 segundos
+
+        }
+    </script>
+</body>
+</html>

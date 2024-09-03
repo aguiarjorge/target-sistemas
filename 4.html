@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequências Numéricas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra o Próximo Elemento</h1>
+
+    <p>Sequência a): 1, 3, 5, 7, ___</p>
+    <p id="resultado-a"></p>
+
+    <p>Sequência b): 2, 4, 8, 16, 32, 64, ____</p>
+    <p id="resultado-b"></p>
+
+    <p>Sequência c): 0, 1, 4, 9, 16, 25, 36, ____</p>
+    <p id="resultado-c"></p>
+
+    <p>Sequência d): 4, 16, 36, 64, ____</p>
+    <p id="resultado-d"></p>
+
+    <p>Sequência e): 1, 1, 2, 3, 5, 8, ____</p>
+    <p id="resultado-e"></p>
+
+    <p>Sequência f): 2, 10, 12, 16, 17, 18, 19, ____</p>
+    <p id="resultado-f"></p>
+
+    <script>
+        // Sequência a)
+        function sequenciaA() {
+            const a = [1, 3, 5, 7];
+            const proximoA = a[a.length - 1] + 2;
+            document.getElementById('resultado-a').textContent = proximoA;
+        }
+
+        // Sequência b)
+        function sequenciaB() {
+            const b = [2, 4, 8, 16, 32, 64];
+            const proximoB = b[b.length - 1] * 2;
+            document.getElementById('resultado-b').textContent = proximoB;
+        }
+
+        // Sequência c)
+        function sequenciaC() {
+            const c = [0, 1, 4, 9, 16, 25, 36];
+            const proximoC = Math.pow(Math.sqrt(c[c.length - 1]) + 1, 2);
+            document.getElementById('resultado-c').textContent = proximoC;
+        }
+
+        // Sequência d)
+        function sequenciaD() {
+            const d = [4, 16, 36, 64];
+            const proximoD = (Math.sqrt(d[d.length - 1]) + 2) ** 2;
+            document.getElementById('resultado-d').textContent = proximoD;
+        }
+
+        // Sequência e)
+        function sequenciaE() {
+            const e = [1, 1, 2, 3, 5, 8];
+            const proximoE = e[e.length - 1] + e[e.length - 2];
+            document.getElementById('resultado-e').textContent = proximoE;
+        }
+
+        // Sequência f)
+        function sequenciaF() {
+            const f = [2, 10, 12, 16, 17, 18, 19];
+            const proximoF = f[f.length - 1] + 1;
+            document.getElementById('resultado-f').textContent = proximoF;
+        }
+
+        // Executar as funções para calcular os próximos elementos
+        sequenciaA();
+        sequenciaB();
+        sequenciaC();
+        sequenciaD();
+        sequenciaE();
+        sequenciaF();
+    </script>
+</body>
+</html>

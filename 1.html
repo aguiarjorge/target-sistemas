@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <script>
+        function pertenceAFibonacci(n) {
+            if (n < 0) return false; 
+            function gerarFibonacci(max) {
+                let fibs = [0, 1];
+                while (fibs[fibs.length - 1] < max) {
+                    fibs.push(fibs[fibs.length - 1] + fibs[fibs.length - 2]);
+                }
+                return fibs;
+            }
+
+            const fibs = gerarFibonacci(n);
+
+            return fibs.includes(n);
+        }
+
+        function verificarNumeroFibonacci() {
+            const numero = parseInt(prompt("Informe um número: "), 10);
+            if (isNaN(numero)) {
+                console.log("Por favor, insira um número válido.");
+                return;
+            }
+
+            if (pertenceAFibonacci(numero)) {
+                console.log(`${numero} pertence à sequência de Fibonacci.`);
+            } else {
+                console.log(`${numero} não pertence à sequência de Fibonacci.`);
+            }
+        }
+        verificarNumeroFibonacci();
+    </script>
+</body>
+</html>
